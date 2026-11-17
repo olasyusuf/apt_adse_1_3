@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing Canvas</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f2f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+      .canvas-container {
+        background-color: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 8px;
+        padding: 10px;
+      }
+      canvas {
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        background-color: #fdfdfd;
+      }
+    </style>
+  </head>
+
+  <script>
+    window.onload = function () {
+      const canvas = document.getElementById("mCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Canvas stroke settings for marker look
+      ctx.strokeStyle = "#333538";
+      ctx.lineWidth = 2;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      // --- DRAWING THE HOUSE ---
+
+      // Main base structure
+      ctx.beginPath();
+      ctx.moveTo(353, 253);
+      ctx.lineTo(921, 262);
+      ctx.lineTo(921, 780);
+      ctx.lineTo(350, 780);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Roof
+      ctx.beginPath();
+      ctx.moveTo(353, 253);
+      ctx.lineTo(656, 17);
+      ctx.lineTo(921, 262);
+      ctx.stroke();
+
+      // Left Window
+      ctx.beginPath();
+      ctx.moveTo(408, 335);
+      ctx.lineTo(515, 335);
+      ctx.lineTo(515, 454);
+      ctx.lineTo(408, 454);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Right Window
+      ctx.beginPath();
+      ctx.moveTo(756, 335);
+      ctx.lineTo(866, 335);
+      ctx.lineTo(866, 454);
+      ctx.lineTo(756, 454);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Door
+      ctx.beginPath();
+      ctx.moveTo(565, 540); // Top-left
+      ctx.lineTo(700, 540); // Top-right (straight horizontal across)
+      ctx.lineTo(700, 780); // Bottom-right (straight vertical down)
+      ctx.lineTo(565, 780); // Bottom-left (straight horizontal across)
+      ctx.closePath();
+      ctx.stroke();
+
+      // Lock / Doorknob with a keyhole inside
+      const knobX = 580;
+      const knobY = 660;
+
+      // Outer handle ring
+      ctx.beginPath();
+      ctx.arc(knobX, knobY, 10, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Inner keyhole
+      ctx.beginPath();
+      ctx.moveTo(580, 655);
+      ctx.lineTo(580, 665);
+      ctx.closePath();
+      ctx.stroke();
+
+      // --- DRAWING THE STICK FIGURES ---
+
+      // Left Figure Head
+      ctx.beginPath();
+      ctx.arc(69, 525, 20, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Left Figure Body
+      ctx.beginPath();
+      ctx.moveTo(69, 545);
+      ctx.lineTo(81, 735);
+      ctx.stroke();
+
+      // Left Figure Legs
+      ctx.beginPath();
+      ctx.moveTo(81, 735);
+      ctx.lineTo(54, 800);
+      ctx.moveTo(81, 735);
+      ctx.lineTo(121, 800);
+      ctx.stroke();
+
+      // Left Figure Left Arm
+      ctx.beginPath();
+      ctx.moveTo(72, 635);
+      ctx.lineTo(47, 660);
+      ctx.stroke();
+
+      // Right Figure Head
+      ctx.beginPath();
+      ctx.arc(223, 535, 20, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.stroke();
+
+      // Right Figure Body
+      ctx.beginPath();
+      ctx.moveTo(223, 555);
+      ctx.lineTo(228, 720);
+      ctx.stroke();
+
+      // Right Figure Legs
+      ctx.beginPath();
+      ctx.moveTo(228, 720);
+      ctx.lineTo(193, 780);
+      ctx.moveTo(228, 720);
+      ctx.lineTo(265, 790);
+      ctx.stroke();
+
+      // Right Figure Right Arm
+      ctx.beginPath();
+      ctx.moveTo(225, 630);
+      ctx.lineTo(253, 695);
+      ctx.stroke();
+
+      // Holding Hands (Connected Arms)
+      ctx.beginPath();
+      ctx.moveTo(72, 635);
+      ctx.lineTo(160, 670);
+      ctx.lineTo(225, 630);
+      ctx.stroke();
+
+      // --- DRAWING THE BIRDS / CLOUDS ---
+
+      // Top bird
+      ctx.beginPath();
+      ctx.moveTo(195, 150);
+      ctx.quadraticCurveTo(215, 120, 230, 150);
+      ctx.quadraticCurveTo(245, 120, 260, 140);
+      ctx.stroke();
+
+      // Middle bird
+      ctx.beginPath();
+      ctx.moveTo(180, 205);
+      ctx.quadraticCurveTo(198, 175, 218, 205);
+      ctx.quadraticCurveTo(233, 175, 250, 195);
+      ctx.stroke();
+
+      // Bottom bird
+      ctx.beginPath();
+      ctx.moveTo(195, 255);
+      ctx.quadraticCurveTo(215, 230, 230, 255);
+      ctx.quadraticCurveTo(243, 230, 258, 245);
+      ctx.stroke();
+    };
+  </script>
+
+  <body>
+    <div class="canvas-container">
+      <canvas id="mCanvas" width="1024" height="780"></canvas>
+    </div>
+  </body>
+</html>

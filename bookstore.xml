@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml-stylesheet type="text/xsl" href="template.xsl"?> -->
+<!DOCTYPE bookstore>
+<!-- <bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="bookstore.xsd"> -->
+<bookstore>
+  <book id="001" category="Fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>14.99</price>
+  </book>
+  <book id="002" category="Technology">
+    <title>Learning XML &amp; XPath</title>
+    <author>Jane Doe</author>
+    <price>39.95</price>
+  </book>
+  <book id="003" category="History">
+    <title>A History of Tomorrow</title>
+    <author>John Smith</author>
+    <price>24.99</price>
+  </book>
+</bookstore>

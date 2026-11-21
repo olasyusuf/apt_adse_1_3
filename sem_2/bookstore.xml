@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- <?xml-stylesheet type="text/xsl" href="template.xsl"?> -->
+<!-- <bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="bookstore.xsd"> -->
+
+<!DOCTYPE bookstore[
+    <!ELEMENT bookstore (book+)>
+    <!ELEMENT book (title, author, price)>
+    <!ATTLIST book
+            id CDATA #REQUIRED
+            category CDATA #REQUIRED>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+]>
+<bookstore>
+  <book id="001" category="Fiction">
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <price>14.99</price>
+  </book>
+  <book id="002" category="Technology">
+    <title>Learning XML &amp; XPath</title>
+    <author>Jane Doe</author>
+    <price>39.95</price>
+  </book>
+  <book id="003" category="History">
+    <title>A History of Tomorrow</title>
+    <author>John Smith</author>
+    <price>24.99</price>
+  </book>
+  <book id="004" category="Science">
+    <title>Introduction to Python</title>
+    <author>Bob Johnson</author>
+    <price>29.99</price>
+  </book>
+</bookstore>
